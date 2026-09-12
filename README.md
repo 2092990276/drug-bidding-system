@@ -80,6 +80,8 @@
 
    启动 Tomcat，访问 http://localhost:8080/drug-bidding-system/login
 
-##👨‍💻 作者
-李欣
+## 👨‍💻 作者
+
+**李欣**
+
 东华理工大学 软件工程专业
