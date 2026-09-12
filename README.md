@@ -64,21 +64,21 @@
 
    ```bash
    git clone https://github.com/2092990276/drug-bidding-system.git
-   导入数据库
+2. 导入数据库
 
-2. 在 MySQL 中创建数据库 drug_bidding
+   在 MySQL 中创建数据库 drug_bidding
 
-执行项目根目录下的 db_init.sql 初始化表结构和测试数据
+   执行项目根目录下的 db_init.sql 初始化表结构和测试数据
 
 3. 修改配置
 
-打开 src/main/resources 下的数据库配置文件，修改数据库连接信息（地址、用户名、密码）
+   打开 src/main/resources 下的数据库配置文件，修改数据库连接信息（地址、用户名、密码）
 
 4. 部署运行
 
-用 IDEA 打开项目，配置 Tomcat
+   用 IDEA 打开项目，配置 Tomcat
 
-启动 Tomcat，访问 http://localhost:8080/drug-bidding-system/login
+   启动 Tomcat，访问 http://localhost:8080/drug-bidding-system/login
 
 ##👨‍💻 作者
 李欣
