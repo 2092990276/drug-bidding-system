@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.drug.bidding.dao.BidDAO">
+    <insert id="insert" parameterType="Bid">
+        INSERT INTO bid(bid_date, bid_company, legal_person, phone, tender_id, batch_number, production_date, expiration_date, total_amount, deposit_date, status)
+        VALUES(#{bidDate}, #{bidCompany}, #{legalPerson}, #{phone}, #{tenderId}, #{batchNumber}, #{productionDate}, #{expirationDate}, #{totalAmount}, #{depositDate}, #{status})
+    </insert>
+    <select id="findById" parameterType="Integer" resultType="Bid">
+        SELECT * FROM bid WHERE id = #{id}
+    </select>
+    <select id="findByTenderId" parameterType="String" resultType="Bid">
+        SELECT * FROM bid WHERE tender_id = #{tenderId}
+    </select>
+    <select id="findAll" resultType="Bid">
+        SELECT * FROM bid ORDER BY bid_date DESC
+    </select>
+    <update id="update" parameterType="Bid">
+        UPDATE bid SET bid_company = #{bidCompany}, legal_person = #{legalPerson}, 
+        phone = #{phone}, batch_number = #{batchNumber}, production_date = #{productionDate}, 
+        expiration_date = #{expirationDate}, total_amount = #{totalAmount}, deposit_date = #{depositDate}, status = #{status}
+        WHERE id = #{id}
+    </update>
+    <delete id="delete" parameterType="Integer">
+        DELETE FROM bid WHERE id = #{id}
+    </delete>
+</mapper>

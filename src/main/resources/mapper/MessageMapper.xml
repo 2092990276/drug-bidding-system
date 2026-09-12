@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.drug.bidding.dao.MessageDAO">
+    <insert id="insert" parameterType="Message">
+        INSERT INTO message(sender, content, send_time, type, status)
+        VALUES(#{sender}, #{content}, #{sendTime}, #{type}, #{status})
+    </insert>
+    <select id="findById" parameterType="Integer" resultType="Message">
+        SELECT * FROM message WHERE id = #{id}
+    </select>
+    <select id="findAll" resultType="Message">
+        SELECT * FROM message ORDER BY send_time DESC
+    </select>
+    <update id="update" parameterType="Message">
+        UPDATE message SET content = #{content}, type = #{type}, status = #{status}
+        WHERE id = #{id}
+    </update>
+    <delete id="delete" parameterType="Integer">
+        DELETE FROM message WHERE id = #{id}
+    </delete>
+</mapper>
